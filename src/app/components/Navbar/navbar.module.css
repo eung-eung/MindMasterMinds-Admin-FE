@@ -1,0 +1,87 @@
+.nav_link {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 17px 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+
+}
+
+.nav_links {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    left: 0;
+    width: 20%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    top: 0;
+    background: #1C2536;
+}
+
+.nav_icon {
+    max-width: 20px;
+    color: #696969;
+    margin-right: 20px;
+
+}
+
+.nav_links a.active svg {
+    color: #fff !important;
+}
+
+.nav_links a svg {
+    color: #43bf8e;
+}
+
+.nav_links a {
+    padding: 10px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.active {
+    background: #252E3E;
+    color: #fff !important;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.user_container {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    justify-content: space-evenly;
+}
+
+.user_detail p {
+    text-align: left;
+
+}
+
+.user_detail p:nth-child(1) {
+    font-weight: 700;
+
+}
+
+.user-detail p:nth-child(2) {
+    font-size: 10px;
+    color: #696969;
+}
