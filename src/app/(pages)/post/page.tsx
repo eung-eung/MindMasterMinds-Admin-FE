@@ -6,6 +6,6 @@ export const metadata: Metadata = {
 }
 export default function TutorManagement() {
     return (
-        <div>Tutor Management</div>
+        <div>POST Management</div>
     )
 }
