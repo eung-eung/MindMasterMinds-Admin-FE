@@ -21,14 +21,13 @@ export default NextAuth({
                     email: credentials?.username,
                     password: credentials?.password,
                 };
-                console.log('payload: ', payload);
 
                 const response = await axious.post('/Auth/login', {
                     email: payload.email,
                     password: payload.password
                 })
-                const user = response.data.userViewLogin.userRole.roleName
-                console.log(user);
+                const user = response.data
+
 
                 if (user) {
                     return user
@@ -52,10 +51,6 @@ export default NextAuth({
             session.user = token as any
             return session
         },
-        async redirect({ url, baseUrl }) {
-            return url.startsWith(baseUrl)
-                ? Promise.resolve(url)
-                : Promise.resolve(baseUrl);
-        },
+
     }
 })
