@@ -28,7 +28,7 @@ export default function LayoutWrapper({
                 {
                     isLoading ? <LoadingTheme /> : <>
                         <Navbar />
-                        <div style={{ marginLeft: '20%', paddingLeft: '5%' }}>
+                        <div style={{ marginLeft: '15%', paddingLeft: '5%' }}>
                             {children}
                         </div>
                     </>
