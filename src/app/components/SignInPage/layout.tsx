@@ -1,8 +1,3 @@
-import ProvidersWrapper from '@/app/components/ProvidersWrapper'
-
-
-
-
 export default function RootLayout({
     children,
 }: {
