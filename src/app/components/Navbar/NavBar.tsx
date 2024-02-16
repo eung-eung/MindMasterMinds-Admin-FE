@@ -6,12 +6,18 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import classes from './navbar.module.css'
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 export default function Navbar() {
     const { data: session, status } = useSession()
     const router = usePathname()
 
+
+
+    const handleLogOut = async (e: React.MouseEvent) => {
+        e.preventDefault()
+        const data = await signOut({ redirect: true, callbackUrl: '/signIn' })
+    }
 
     return (
         <>
@@ -20,12 +26,15 @@ export default function Navbar() {
                     <div className={classes.user_container}>
                         <img className={classes.avatar} src='/images/icon.jpg' />
                         <div className={classes.user_detail}>
-                            <p>Username</p>
-                            <p>Admin</p>
+                            <p>{session?.user.userViewLogin.firstName
+                                + ' '
+                                + session?.user.userViewLogin.lastName}
+                            </p>
+                            <p>{session?.user.userViewLogin.userRole.roleName}</p>
                         </div>
                     </div>
                     <Link
-                        className={router == '/dashboard' ? classes.active : ''}
+                        className={router == '/dashboard' || router == '/' ? classes.active : ''}
                         href="/dashboard">
                         <DashboardIcon
                             className={classes.nav_icon}
@@ -57,9 +66,9 @@ export default function Navbar() {
                         />
                         Post Management
                     </Link>
-                    <Link href="/logout">
+                    <div className={classes.logout} onClick={handleLogOut}>
                         <LogoutIcon className={classes.nav_icon} /> Logout
-                    </Link>
+                    </div>
                 </div>
             }
 
