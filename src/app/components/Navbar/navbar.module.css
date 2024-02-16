@@ -33,13 +33,19 @@
     color: #fff !important;
 }
 
-.nav_links a svg {
+.nav_links a svg,
+.logout svg {
     color: #43bf8e;
 }
 
-.nav_links a {
+.logout {
+    cursor: pointer;
+}
+
+.nav_links a,
+.logout {
     padding: 10px;
-    color: #fff;
+    color: #535458;
     font-size: 17px;
     font-weight: 600;
     margin-left: 15px;
@@ -49,7 +55,7 @@
 }
 
 .active {
-    background: #252E3E;
+    background: #0F1015;
     color: #fff !important;
     border-radius: 10px;
     font-weight: 700;
@@ -73,7 +79,7 @@
 
 .user_detail p {
     text-align: left;
-
+    color: #fff;
 }
 
 .user_detail p:nth-child(1) {
