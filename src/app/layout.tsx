@@ -2,6 +2,8 @@
 import ProvidersWrapper from '@/app/components/ProvidersWrapper'
 import './globals.css'
 import Navbar from './components/Navbar/NavBar'
+import LayoutWrapper from './components/LayoutWrapper'
+
 
 
 export default function RootLayout({
@@ -17,11 +19,9 @@ export default function RootLayout({
       </head>
       <body>
         <ProvidersWrapper>
-          <Navbar />
-          <div style={{ marginLeft: '20%', paddingLeft: '5%' }}>
+          <LayoutWrapper>
             {children}
-          </div>
-
+          </LayoutWrapper>
         </ProvidersWrapper>
       </body>
     </html>
