@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap');
+
+.webName {
+    color: white;
+    font-family: 'Belanosima', sans-serif;
+    font-size: 30px;
+   padding-right: 25%;
+
+}
+
+.search {
+    display: block;
+    fill: none;
+    height: 12px;
+    width: 12px;
+    stroke: white;
+    stroke-width: 6;
+    overflow: visible;
+}

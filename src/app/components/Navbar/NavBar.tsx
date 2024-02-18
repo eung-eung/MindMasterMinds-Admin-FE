@@ -8,6 +8,7 @@ import ListAltIcon from '@mui/icons-material/ListAlt';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import { signOut, useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
+import Header from "../Header/Header";
 export default function Navbar() {
     const { data: session, status } = useSession()
     const router = usePathname()
@@ -23,6 +24,7 @@ export default function Navbar() {
         <>
             {!session && status === 'unauthenticated' ? '' :
                 <>
+                <Header/>
                     <div className={classes.nav_links}>
                         <div className={classes.user_container}>
                             <img className={classes.avatar} src={session?.user.userViewLogin.avatar} />

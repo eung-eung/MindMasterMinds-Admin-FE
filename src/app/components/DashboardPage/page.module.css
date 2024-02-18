@@ -1,0 +1,50 @@
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.dashboardContainer {
+    margin-left: 20px;
+    margin-right: 100px;
+    padding-bottom: 100px;
+}
+
+.chartBar {
+    margin-top: 60px;
+    width: 100%;
+    height: 400px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding: 40px 20px;
+    background-color: #1c2536;
+    color: #a7a3a3;
+}
+
+
+
+.itemChart {
+    color: #0B8A00;
+    background: #23C10A26;
+    position: absolute;
+    right: 0;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 2px 6px;
+    top: 0;
+
+}
+
+.studioStatus {
+    width: 60%;
+    border: 0.2px solid #dddddd;
+}
+
+.chartPie {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    width: 35%;
+    border: 1px solid #dddddd;
+    padding: 15px;
+    background-color: #1c2536;
+    color: white;
+}

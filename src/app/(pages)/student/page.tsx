@@ -1,3 +1,4 @@
+import StudentManage from '@/app/components/StudentPage/page'
 import { Metadata } from 'next'
 import React from 'react'
 
@@ -6,6 +7,8 @@ export const metadata: Metadata = {
 }
 export default function StudenManagement() {
     return (
-        <div>StudenManagement</div>
+        <div>
+            <StudentManage/>
+        </div>
     )
 }
