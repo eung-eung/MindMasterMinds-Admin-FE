@@ -14,7 +14,7 @@ export default function TutorManage() {
     return (
         <div className={`${classes.serviceContainer}`}>
             <div className={classes.serviceTitle}>
-                <h2 className="font-semibold text-left text-3xl font-[Belanosima] text-[#bfbaba]">Tutors Management</h2>
+                <h2 className="font-semibold text-left text-3xl font-[Belanosima] ">Tutors Management</h2>
             </div>
             <div className={classes.serviceContent}>
                 <div className={classes.serviceAction}>

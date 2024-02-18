@@ -49,17 +49,17 @@ const rows = [
 export default function StudioStatus() {
 
     return (
-        <div style={{ backgroundColor: "#1c2536"}}>
-            <h3 style={{ textAlign: "left", padding: "5px 10px", fontFamily: "Belanosima", fontSize:"25px", color:"white" }}>Top 3 Best Tutors of Year</h3>
+        <div>
+            <h3 style={{ textAlign: "left", padding: "5px 10px", fontFamily: "Belanosima", fontSize:"25px", backgroundColor:"#fcfcfc"}}>Top 3 Best Tutors of Year</h3>
             <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650, backgroundColor: "#1c2536" }} aria-label="simple table">
+                <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
-                            <TableCell style={{ color: "#cbc6c6", fontFamily: "Belanosima", fontSize:"18px" }}>Tutor's Name</TableCell>
-                            <TableCell style={{ color: "#cbc6c6", fontFamily: "Belanosima", fontSize:"18px" }} align="center">Revenue</TableCell>
-                            <TableCell style={{ color: "#cbc6c6", fontFamily: "Belanosima", fontSize:"18px" }} align="center">Major</TableCell>
-                            <TableCell style={{ color: "#cbc6c6", fontFamily: "Belanosima", fontSize:"18px" }} align="center">Number of classes</TableCell>
-                            <TableCell style={{ color: "#cbc6c6", fontFamily: "Belanosima", fontSize:"18px" }} align="center">Status</TableCell>
+                            <TableCell style={{ fontFamily: "Belanosima", fontSize:"18px" }}>Tutor's Name</TableCell>
+                            <TableCell style={{ fontFamily: "Belanosima", fontSize:"18px" }} align="center">Revenue</TableCell>
+                            <TableCell style={{ fontFamily: "Belanosima", fontSize:"18px" }} align="center">Major</TableCell>
+                            <TableCell style={{ fontFamily: "Belanosima", fontSize:"18px" }} align="center">Number of classes</TableCell>
+                            <TableCell style={{ fontFamily: "Belanosima", fontSize:"18px" }} align="center">Status</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -70,7 +70,7 @@ export default function StudioStatus() {
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 }  }}
                             >
 
-                                <TableCell align="left" style={{ display: "flex", alignItems: "center", fontFamily: "Belanosima", fontSize:"16px",color: "#a7a3a3" }}>
+                                <TableCell align="left" style={{ display: "flex", alignItems: "center", fontFamily: "Belanosima", fontSize:"16px" }}>
                                     <img
                                         style={{
                                             width: "50px",
@@ -85,10 +85,10 @@ export default function StudioStatus() {
                                     }
 
                                 </TableCell>
-                                <TableCell style={{fontFamily: "Belanosima", fontSize:"16px",color: "#a7a3a3" }} align="center">{row.style}</TableCell>
-                                <TableCell style={{fontFamily: "Belanosima", fontSize:"16px",color: "#a7a3a3" }} align="center">{row.exp}</TableCell>
-                                <TableCell style={{fontFamily: "Belanosima", fontSize:"16px",color: "#a7a3a3" }} align="center">{row.disipline}</TableCell>
-                                <TableCell style={{fontFamily: "Belanosima", fontSize:"16px",color: "#a7a3a3" }} align="center">Available</TableCell>
+                                <TableCell style={{fontFamily: "Belanosima", fontSize:"16px" }} align="center">{row.style}</TableCell>
+                                <TableCell style={{fontFamily: "Belanosima", fontSize:"16px" }} align="center">{row.exp}</TableCell>
+                                <TableCell style={{fontFamily: "Belanosima", fontSize:"16px" }} align="center">{row.disipline}</TableCell>
+                                <TableCell style={{fontFamily: "Belanosima", fontSize:"16px" }} align="center">Available</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

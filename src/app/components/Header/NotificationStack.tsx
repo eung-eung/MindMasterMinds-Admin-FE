@@ -45,7 +45,7 @@ export default function NotificationStack() {
 
   return (
     <Popover className="relative">
-      <Popover.Button className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-white">
+      <Popover.Button className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-black">
         <span>
           <Badge badgeContent={notiList.length} color='error'>
           <BellIcon className="h-6 w-6" aria-hidden="true" />

@@ -19,7 +19,7 @@
     width: 15%;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     top: 0;
-    background: #1C2536;
+    background: #FFFFFF;
     z-index: 999;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .active {
-    background: #0F1015;
+    background: #43BF8E;
     color: #fff !important;
     border-radius: 10px;
     font-weight: 700;
@@ -80,14 +80,14 @@
 
 
 .role {
-    color: #dddddd;
-    font-size: 12px;
+    color: #373636;
+    font-size: 13px;
     font-style: italic;
 }
 
 .user_detail p {
     text-align: left;
-    color: #fff;
+    color: #373636;
 }
 
 .user_detail p:nth-child(1) {

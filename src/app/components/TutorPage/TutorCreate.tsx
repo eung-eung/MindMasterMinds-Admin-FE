@@ -106,20 +106,19 @@ export default function TutorCreate({ handleCallback }: Props) {
                 onClose={handleClose}
                 aria-labelledby="customized-dialog-title"
                 open={open}
-                PaperProps={{ style: { backgroundColor: '#1C2536' } }}
             >
                 <form style={{ width: "100%" }} onSubmit={handleSubmit}>
                     <section className="text-white body-font relative">
                         <div >
                             <div className="flex flex-col text-center w-full mt-10 mb-10">
-                                <h1 className="sm:text-3xl text-2xl font-semibold font-[Belanosima] title-font mb-4 text-white">Add New Tutor</h1>
+                                <h1 className="sm:text-3xl text-2xl font-semibold font-[Belanosima] title-font mb-4 text-gray-700">Add New Tutor</h1>
                             </div>
                             <div className="lg:w-2/3 md:w-2/3 mx-auto">
                                 <div className="flex flex-wrap -m-12">
                                     <div className="p-2 w-full">
 
                                         <div className="col-span-full">
-                                            <label htmlFor="firstName" className="block font-medium font-[Belanosima] text-xl leading-6 text-[#bfbaba]">Name</label>
+                                            <label htmlFor="firstName" className="block font-medium font-[Belanosima] text-xl leading-6 text-gray-700">Name</label>
                                             <div className="mt-2">
                                                 <input value={newTutor.firstName}
                                                     onChange={handleChange}
@@ -129,10 +128,10 @@ export default function TutorCreate({ handleCallback }: Props) {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="p-2 w-full">
+                                    <div className="p-2 w-full mt-4">
 
                                         <div className="col-span-full">
-                                            <label htmlFor="lastName" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#bfbaba]">Description</label>
+                                            <label htmlFor="lastName" className="block font-[Belanosima] text-xl font-medium leading-6 text-gray-700">Description</label>
                                             <div className="mt-2">
                                                 <textarea value={newTutor.lastName}
                                                     onChange={handleChange}
@@ -145,7 +144,7 @@ export default function TutorCreate({ handleCallback }: Props) {
                                     {/* <div className="p-2 w-full">
 
                                         <div className="col-span-full">
-                                            <label htmlFor="revenue" className="block text-sm font-medium leading-6 text-[#bfbaba]">Revenue</label>
+                                            <label htmlFor="revenue" className="block text-sm font-medium leading-6 text-gray-700">Revenue</label>
                                             <div className="mt-2">
                                                 <input value={newTutor.revenue}
                                                     onChange={handleChange}
@@ -156,9 +155,9 @@ export default function TutorCreate({ handleCallback }: Props) {
                                             </div>
                                         </div>
                                     </div> */}
-                                    <div className="p-2 w-full">
+                                    <div className="p-2 w-full mt-4">
                                         <div className="sm:col-span-3">
-                                            <label htmlFor="major" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#bfbaba]">Major</label>
+                                            <label htmlFor="major" className="block font-[Belanosima] text-xl font-medium leading-6 text-gray-700">Major</label>
                                             <div className="mt-2">
                                                 <select onChange={handleChange}
                                                     value={newTutor.major}
@@ -177,10 +176,10 @@ export default function TutorCreate({ handleCallback }: Props) {
                                         </div>
                                     </div>
 
-                                    <div className="p-2 w-1/2">
+                                    <div className="p-2 w-1/2 mt-4">
 
                                         <div className="sm:col-span-3">
-                                            <label htmlFor="rate" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#bfbaba]">Rate</label>
+                                            <label htmlFor="rate" className="block font-[Belanosima] text-xl font-medium leading-6 text-gray-700">Rate</label>
                                             <div className="mt-2">
                                                 <input onChange={handleChange}
                                                     value={newTutor.rate}
@@ -192,10 +191,10 @@ export default function TutorCreate({ handleCallback }: Props) {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="p-2 w-1/2">
+                                    <div className="p-2 w-1/2 mt-4">
 
                                         <div className="sm:col-span-3">
-                                            <label htmlFor="numOfClass" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#bfbaba]">Number Of Class</label>
+                                            <label htmlFor="numOfClass" className="block font-[Belanosima] text-xl font-medium leading-6 text-gray-700">Number Of Class</label>
                                             <div className="mt-2">
                                                 <input onChange={handleChange}
                                                     value={newTutor.numOfClass}
@@ -208,13 +207,13 @@ export default function TutorCreate({ handleCallback }: Props) {
                                         </div>
                                     </div>
 
-                                    <div className="p-2 w-full">
+                                    <div className="p-2 w-full mt-4">
                                         <div className="col-span-full">
-                                            <label htmlFor="mainImage" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#bfbaba]">Main image</label>
+                                            <label htmlFor="mainImage" className="block font-[Belanosima] text-xl font-medium leading-6 text-gray-700">Main image</label>
                                             <div className="mt-2 flex justify-center rounded-lg border border-dashed border-[#bfbaba] px-2 py-4">
                                                 <div className="text-center">
                                                     <div className="mt-1 flex text-sm leading-6 text-gray-600">
-                                                        <label htmlFor="mainImage" className="relative cursor-pointer rounded-md bg-white font-semibold text-[#bfbaba] focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
+                                                        <label htmlFor="mainImage" className="relative cursor-pointer rounded-md bg-white font-semibold text-gray-700 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-[#43bf8e]">
                                                             <span className='font-[Belanosima] text-xl'>Upload a file</span>
                                                             <input accept=".jpg, .jpeg, .png" id="mainImage" type="file" name="mainImage" onChange={handleChange} className="sr-only" />
                                                         </label>

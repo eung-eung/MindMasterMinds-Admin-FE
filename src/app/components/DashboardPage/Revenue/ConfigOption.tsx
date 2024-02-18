@@ -14,18 +14,17 @@ export const options: ChartOptions<'bar'> = {
                 display: false
             },
             ticks: {
-                color: 'white', // Change text color of month labels
+                color: 'black', // Change text color of month labels
             }
         },
         y: {
             grid: {
                 display: true,
-                color: 'gray',
             },
             max: 600,
             ticks: {
                 stepSize: 200,
-                color: 'white', // Change text color of y-axis ticks
+                color: 'black', // Change text color of y-axis ticks
             }
         },
     }

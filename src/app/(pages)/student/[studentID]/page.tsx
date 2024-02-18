@@ -71,44 +71,44 @@ export default function StudentUpdate ()  {
                 <section className="text-gray-600 body-font relative">
                     <div className="container px-5 py-24 mx-auto">
                         <div className="flex flex-col text-center w-full mb-12">
-                            <h1 className="sm:text-4xl text-4xl font-semibold font-[Belanosima] mb-2 text-white ">Update student</h1>
+                            <h1 className="sm:text-4xl text-4xl font-semibold font-[Belanosima] mb-2 text-gray-700 ">Update student</h1>
                         </div>
                         <div className="lg:w-3/4 md:w-2/3 mx-auto ">
                             <div className="flex flex-wrap -m-8">
                                 <div className="p-2 w-full">
                                     <div className="col-span-full">
-                                        <label htmlFor="firstName" className="block font-medium font-[Belanosima] text-xl leading-6 text-[#d7d4d4]">First name</label>
+                                        <label htmlFor="firstName" className="block font-medium font-[Belanosima] text-xl leading-6 ">First name</label>
                                         <div className="mt-2">
                                             <input type="text"
                                                 name="firstName" 
                                                 value={student.firstName}
                                                 onChange={handleChange}
-                                                autoComplete="firstName" className="block font-[Belanosima] text-xl p-2 w-full rounded-md border-0 py-1.5 text-grey-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6" />
+                                                autoComplete="firstName" className="block font-[Belanosima] text-xl p-4 w-full rounded-md border-0 py-1.5 text-grey-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6" />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="p-2 w-full mt-4">
                                     <div className="col-span-full">
-                                        <label htmlFor="lastName" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#d7d4d4]">Last name</label>
+                                        <label htmlFor="lastName" className="block font-[Belanosima] text-xl font-medium leading-6 ">Last name</label>
                                         <div className="mt-2">
                                             <input type="text"
                                                 name="lastName" 
                                                 value={student.lastName}
                                                 onChange={handleChange}
-                                                autoComplete="lastName" className="block font-[Belanosima] text-xl p-2 w-full rounded-md border-0 py-1.5 text-grey-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6" />
+                                                autoComplete="lastName" className="block font-[Belanosima] text-xl p-4 w-full rounded-md border-0 py-1.5 text-grey-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6" />
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="p-2 w-1/2 mt-4">
                                     <div className="sm:col-span-3">
-                                        <label htmlFor="yob" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#d7d4d4]">Year of birth</label>
+                                        <label htmlFor="yob" className="block font-[Belanosima] text-xl font-medium leading-6 ">Year of birth</label>
                                         <div className="mt-2">
                                             <input type="number"
                                                 name="yob"
                                                 value={student.yob}
                                                 onChange={handleChange}
-                                                required autoComplete="yob" className="block font-[Belanosima] text-xl p-2 w-full rounded-md border-0 py-1.5 text-grey-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6" />
+                                                required autoComplete="yob" className="block font-[Belanosima] text-xl p-4 w-full rounded-md border-0 py-1.5 text-grey-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6" />
                                             {!isYOBValid && <div style={{ color: 'red', fontFamily:"Belanosima" }}>Year of Birth must be between 1000 and 2024</div>}
                                         </div>
                                     </div>
@@ -116,38 +116,38 @@ export default function StudentUpdate ()  {
                                 <div className="p-2 w-1/2 mt-4">
 
                                     <div className="sm:col-span-3">
-                                        <label htmlFor="totalCourse" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#d7d4d4]">Total Course</label>
+                                        <label htmlFor="totalCourse" className="block font-[Belanosima] text-xl font-medium leading-6 ">Total Course</label>
                                         <div className="mt-2">
                                             <input type="number"
                                                 name="totalCourse"
                                                 value={student.totalCourse}
                                                 onChange={handleChange}
-                                                required autoComplete="totalCourse" className="block font-[Belanosima] text-xl p-2 w-full rounded-md border-0 py-1.5 text-grey-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6" />
+                                                required autoComplete="totalCourse" className="block font-[Belanosima] text-xl p-4 w-full rounded-md border-0 py-1.5 text-grey-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6" />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="p-2 w-full mt-4">
                                     <div className="sm:col-span-3">
-                                        <label htmlFor="email" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#d7d4d4]">Email</label>
+                                        <label htmlFor="email" className="block font-[Belanosima] text-xl font-medium leading-6 ">Email</label>
                                         <div className="mt-2">
                                             <input type="text"
                                                 name="email"
                                                 value={student.email}
                                                 onChange={handleChange}
-                                                required autoComplete="email" className="block font-[Belanosima] text-xl p-2 w-full rounded-md border-0 py-1.5 text-grey-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6" />
+                                                required autoComplete="email" className="block font-[Belanosima] text-xl p-4 w-full rounded-md border-0 py-1.5 text-grey-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6" />
                                             {!isEmailValid && <div style={{ color: 'red', fontFamily:"Belanosima" }}>Email is invalid!</div>}
                                         </div>
                                     </div>
                                 </div>
                                 <div className="p-2 w-full mt-4">
                                     <div className="sm:col-span-3">
-                                        <label htmlFor="phoneNum" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#d7d4d4]">Number</label>
+                                        <label htmlFor="phoneNum" className="block font-[Belanosima] text-xl font-medium leading-6 ">Number</label>
                                         <div className="mt-2">
                                             <input type="text"
                                                 name="phoneNum"
                                                 value={student.phoneNum}
                                                 onChange={handleChange}
-                                                required autoComplete="phoneNum" className="block font-[Belanosima] text-xl p-2 w-full rounded-md border-0 py-1.5 text-grey-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6" />
+                                                required autoComplete="phoneNum" className="block font-[Belanosima] text-xl p-4 w-full rounded-md border-0 py-1.5 text-grey-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6" />
                                             {!isPhoneNumValid && <div style={{ color: 'red', fontFamily:"Belanosima" }}>Phone number is invalid!</div>}
                                         </div>
                                     </div>

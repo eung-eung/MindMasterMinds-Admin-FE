@@ -103,10 +103,6 @@ export default function TableTutor({ eventRefresh }: TableTutorProps) {
     ];
 
 
-
-
-
-
     return (
         <div style={{ height: "75vh", paddingTop: "50px", paddingBottom: "100px", zIndex: "-1" }}>
             <DataGrid
@@ -117,7 +113,7 @@ export default function TableTutor({ eventRefresh }: TableTutorProps) {
                     "&.MuiDataGrid-root .MuiDataGrid-cell:focus-within": {
                         outline: "none !important",
                     },
-                    fontFamily: "Belanosima", fontSize: "17px", color: "#d7d4d4", backgroundColor: "#1C2536"
+                    fontFamily: "Belanosima", fontSize: "17px", backgroundColor: "white"
                 }}
                 initialState={{
                     pagination: {
@@ -148,7 +144,7 @@ export default function TableTutor({ eventRefresh }: TableTutorProps) {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={() => setDeleteDialogOpen(false)} color="primary">
+                    <Button onClick={() => setDeleteDialogOpen(false)} style={{color:"grey"}}>
                     <p className='font-[Belanosima]'>Cancel</p>
                     </Button>
                     <Button

@@ -5,7 +5,7 @@ export const options = {
         legend: {
             position: 'right',
             labels: {
-                color: '#cbc6c6',
+                color: '#747474',
                 font: {
                     family: 'Belanosima'
                 }

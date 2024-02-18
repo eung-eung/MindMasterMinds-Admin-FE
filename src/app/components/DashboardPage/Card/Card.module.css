@@ -7,25 +7,25 @@
     margin-right: auto;
     margin-bottom: 20px;
     margin-top: 80px;
-    background-color: #1c2536;
+    background-color: #ffffff;
 }
 
 .cardItem p {
     text-align: left;
     font-family: Belanosima;
-    color: white;
+    color: #000000;
 }
 
 .cardItem p:nth-child(1) {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     position: relative;
 
 }
 
 .cardItem p:nth-child(2) {
     font-size: 25px;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 5px;
 }
 
@@ -36,8 +36,8 @@
 }
 
 .itemChart {
-    color: #7AFDC9;
-    background: #23C10A26;
+    color: #f2f7f5;
+    background: #327a5d;
     position: absolute;
     right: 0;
     border-radius: 30px;

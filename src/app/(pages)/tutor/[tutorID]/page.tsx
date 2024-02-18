@@ -75,47 +75,47 @@ export default function TutorUpdate() {
         <div >
             {error && <p>{error}</p>}
             <form onSubmit={handleSubmit}>
-                <section className="text-white body-font relative">
+                <section className="text-gray-700 body-font relative">
                     <div className="container px-5 py-24 mx-auto">
                         <div className="flex flex-col text-center w-full mb-4">
-                            <h1 className="sm:text-4xl font-[Belanosima] font-semibold title-font mb-4 text-white">Update tutor</h1>
+                            <h1 className="sm:text-4xl font-[Belanosima] font-semibold title-font mb-4">Update tutor</h1>
                         </div>
                         <div className="lg:w-3/4 md:w-2/3 mx-auto">
                             <div className="flex flex-wrap -m-2">
                                 <div className="p-2 w-full">
                                     <div className="col-span-full">
-                                        <label htmlFor="firstName" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#d7d4d4]">First name</label>
+                                        <label htmlFor="firstName" className="block font-[Belanosima] text-xl font-medium leading-6">First name</label>
                                         <div className="mt-2">
                                             <input type="text"
                                                 name="firstName" // Change 'name' attribute to 'firstName'
                                                 value={tutor.firstName}
                                                 onChange={handleChange}
-                                                autoComplete="firstName" className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg font-[Belanosima] sm:leading-6" />
+                                                autoComplete="firstName" className="block p-4 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg font-[Belanosima] sm:leading-6" />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="p-2 w-full">
                                     <div className="col-span-full">
-                                        <label htmlFor="lastName" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#d7d4d4]">Last name</label>
+                                        <label htmlFor="lastName" className="block font-[Belanosima] text-xl font-medium leading-6 ">Last name</label>
                                         <div className="mt-2">
                                             <input type="text"
                                                 name="lastName" // Change 'name' attribute to 'lastName'
                                                 value={tutor.lastName}
                                                 onChange={handleChange}
-                                                autoComplete="lastName" className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg font-[Belanosima] sm:leading-6" />
+                                                autoComplete="lastName" className="block p-4 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg font-[Belanosima] sm:leading-6" />
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="p-2 w-1/2">
                                     <div className="sm:col-span-3">
-                                        <label htmlFor="revenue" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#d7d4d4]">Year of birth</label>
+                                        <label htmlFor="revenue" className="block font-[Belanosima] text-xl font-medium leading-6 ">Year of birth</label>
                                         <div className="mt-2">
                                             <input type="number"
                                                 name="revenue"
                                                 value={tutor.revenue}
                                                 onChange={handleChange}
-                                                required autoComplete="revenue" className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg font-[Belanosima] sm:leading-6" />
+                                                required autoComplete="revenue" className="block p-4 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg font-[Belanosima] sm:leading-6" />
                                             {!isRevenueValid && <div style={{ color: 'red' }}>Revenue must be larger than 0</div>}
                                         </div>
                                     </div>
@@ -123,7 +123,7 @@ export default function TutorUpdate() {
                                 <div className="p-2 w-1/2">
 
                                     <div className="sm:col-span-3">
-                                    <label htmlFor="major" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#d7d4d4]">Major</label>
+                                    <label htmlFor="major" className="block font-[Belanosima] text-xl font-medium leading-6 ">Major</label>
                                             <div className="mt-2">
                                                 <select onChange={handleChange}
                                                     value={tutor.major}
@@ -131,7 +131,7 @@ export default function TutorUpdate() {
                                                     name="major"
                                                     required
                                                     autoComplete="major"
-                                                    className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg font-[Belanosima] sm:leading-6">
+                                                    className="block p-4 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg font-[Belanosima] sm:leading-6">
                                                     <option value="">Select Major</option>
                                                     <option value="Digital Marketing">Digital Marketing</option>
                                                     <option value="International Business">International Business</option>
@@ -143,37 +143,37 @@ export default function TutorUpdate() {
                                 </div>
                                 <div className="p-2 w-full">
                                     <div className="sm:col-span-3">
-                                        <label htmlFor="rate" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#d7d4d4]">Rating</label>
+                                        <label htmlFor="rate" className="block font-[Belanosima] text-xl font-medium leading-6 ">Rating</label>
                                         <div className="mt-2">
                                             <input type="text"
                                                 name="rate"
                                                 value={tutor.rate}
                                                 onChange={handleChange}
-                                                required autoComplete="rate" className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg font-[Belanosima] sm:leading-6" />
+                                                required autoComplete="rate" className="block p-4 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg font-[Belanosima] sm:leading-6" />
                                             {!isRateValid && <div style={{ color: 'red' }}>Rate is between 1 and 5!</div>}
                                         </div>
                                     </div>
                                 </div>
                                 <div className="p-2 w-full">
                                     <div className="sm:col-span-3">
-                                        <label htmlFor="numOfClass" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#d7d4d4]">Number of className</label>
+                                        <label htmlFor="numOfClass" className="block font-[Belanosima] text-xl font-medium leading-6 ">Number of Class</label>
                                         <div className="mt-2">
                                             <input type="text"
                                                 name="numOfClass"
                                                 value={tutor.numOfClass}
                                                 onChange={handleChange}
-                                                required autoComplete="numOfClass" className="block font-[Belanosima] p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6" />
+                                                required autoComplete="numOfClass" className="block font-[Belanosima] p-4 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6" />
                                             {!isNumOfClassValid && <div style={{ color: 'red' }}>Number Of className must be larger or equal 0!</div>}
                                         </div>
                                     </div>
                                 </div>
                                 <div className="p-2 w-full">
                                         <div className="col-span-full">
-                                            <label htmlFor="mainImage" className="block font-[Belanosima] text-xl font-medium leading-6 text-[#d7d4d4]">Image</label>
-                                            <div className="mt-2 flex justify-center rounded-lg border border-dashed border-white px-2 py-4">
+                                            <label htmlFor="mainImage" className="block font-[Belanosima] text-xl font-medium leading-6 ">Image</label>
+                                            <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-2 py-4">
                                                 <div className="text-center">
-                                                    <div className="mt-1 flex font-[Belanosima] text-xl leading-6 text-[#d7d4d4]">
-                                                        <label htmlFor="mainImage" className="relative cursor-pointer rounded-md bg-black font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
+                                                    <div className="mt-1 flex font-[Belanosima] text-xl leading-6 ">
+                                                        <label htmlFor="mainImage" className="relative cursor-pointer rounded-md font-semibold text-gray-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-[#43BF8E]">
                                                             <span>Upload a file</span>
                                                             <input accept=".jpg, .jpeg, .png" id="mainImage" type="file" name="mainImage" onChange={handleChange} className="sr-only" />
                                                         </label>

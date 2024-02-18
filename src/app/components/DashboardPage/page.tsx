@@ -41,7 +41,7 @@ export default function DashBoardPage() {
                 {array.map(item => <Card item={item} key={item.title} />)}
             </div>
             <div className={classes.chartBar}>
-                <h3 className='text-left mb-4 font-[Belanosima] text-white text-3xl'>Revenue</h3>
+                <h3 className='text-left mb-4 font-[Belanosima] text-black text-3xl'>Revenue</h3>
                 <Revenue />
             </div>
             <div style={{ marginTop: "80px", display: "flex", justifyContent: "space-between" }}>

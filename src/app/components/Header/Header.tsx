@@ -4,6 +4,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import classes from './Header.module.css'
 import NotificationStack from './NotificationStack'
+import Link from 'next/link'
 
 type NavigationItem = {
     name: string;
@@ -22,9 +23,9 @@ type NavigationItem = {
 
 export default function Header() {
     return (
-        <Disclosure as="nav" className="bg-[#1c2536] ml-[15%] w-auto">
+        <Disclosure as="nav" className="bg-[#FFFFFF] ml-[15%] w-auto">
             <>
-                <div className="mx-auto max-w-5xl px-2 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-5xl px-2 sm:px-6 lg:px-8" >
                     <div className="relative flex h-16 items-center justify-between">
 
                         {/* Search bar */}
@@ -57,8 +58,10 @@ export default function Header() {
                         </div> */}
                         {/* end search */}
 
-                        <div className="hidden sm:ml-6 sm:block flex items-center justify-center flex-grow">
-                            <h1 className={`${classes.webName} flex justify-center`}>MindMasterminds</h1>
+                        <div className="hidden sm:ml-6 sm:block flex items-center justify-center flex-grow" >
+                            <h1 className={`${classes.webName} flex justify-center font-semibold`}>
+                                <Link href="/dashboard">MindMasterminds</Link> 
+                                </h1>
                         </div>
                         <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">    
                             <NotificationStack/>

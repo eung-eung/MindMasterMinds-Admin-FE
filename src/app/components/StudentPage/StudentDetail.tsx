@@ -44,9 +44,9 @@ export default function StudentDetail({ open, onClose, selectedData }: Props) {
         onClose={onClose}
         aria-labelledby="customized-dialog-title"
         open={open}
-        PaperProps={{ style: { backgroundColor: '#1C2536' } }}
+        
       >
-        <DialogTitle sx={{ m: 0, p: 2, fontFamily: "Belanosima", color:"white" }} id="customized-dialog-title">
+        <DialogTitle sx={{ m: 0, p: 2, fontFamily: "Belanosima"}} id="customized-dialog-title">
           Detail Dialog
         </DialogTitle>
         <IconButton
@@ -61,8 +61,8 @@ export default function StudentDetail({ open, onClose, selectedData }: Props) {
         >
           <CloseIcon />
         </IconButton>
-        <DialogContent dividers style={{backgroundColor:"black"}}>
-        <div className="bg-[#1C2536] px-1 pb-1 pt-1 sm:p-1 sm:pb-1">
+        <DialogContent dividers>
+        <div className="bg-white px-1 pb-1 pt-1 sm:p-1 sm:pb-1">
                   <div className="sm:flex sm:items-start">
                     <div className="mt-1 text-center sm:ml-4 sm:mt-0 sm:text-left">
                       {/* Detai Student */}
@@ -70,7 +70,7 @@ export default function StudentDetail({ open, onClose, selectedData }: Props) {
                         <section className="text-gray-600 body-font">
                           <div className="container px-2 py-4 mx-auto">
                             <div className="text-center mb-6">
-                              <h1 className="sm:text-3xl text-2xl font-semibold text-center title-font mb-2 font-[Belanosima] text-white">Detail Student</h1>
+                              <h1 className="sm:text-3xl text-2xl font-semibold text-center title-font mb-2 font-[Belanosima] ">Detail Student</h1>
                             </div>
                             <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
                               <div className="p-2 sm:w-1/2 w-full">

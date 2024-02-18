@@ -98,7 +98,7 @@ export default function TableStudent() {
                 }}
                 pageSizeOptions={[5, 10]}
                 checkboxSelection
-                sx={{ fontFamily: "Belanosima", fontSize: "17px", color: "#d7d4d4", backgroundColor: "#1C2536" }}
+                sx={{ fontFamily: "Belanosima", fontSize: "17px", backgroundColor: "white" }}
             />
 
             {/* Detail Dialog */}

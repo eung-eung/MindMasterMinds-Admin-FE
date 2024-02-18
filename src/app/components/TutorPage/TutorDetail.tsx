@@ -25,16 +25,15 @@ export default function TutorDetail({ open, onClose, selectedData }: Props) {
                 maxWidth="md"
                 open={open}
                 onClose={onClose}
-                PaperProps={{ style: { backgroundColor: '#1C2536' } }}
             >
-                <section className="text-[#bfbaba] body-font ">
+                <section className="text-gray-700 body-font ">
                     <div className="container px-2 py-12 mx-auto">
                         <div className="text-center">
                             {/* <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">{selectedData && selectedData.name}</h1> */}
                             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-2">
                                 <div className="mx-auto max-w-2xl py-0 mb-3 pb-0 sm:py-0 lg:max-w-none lg:py-0">
                                     <div>
-                                        <div className="relative h-full w-full overflow-hidden rounded-lg bg-[#1C2536] sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
+                                        <div className="relative h-full w-full overflow-hidden rounded-lg sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
                                             {selectedData && selectedData.imagePath && (
                                                 <img
                                                     src={selectedData.imagePath}
@@ -52,7 +51,7 @@ export default function TutorDetail({ open, onClose, selectedData }: Props) {
                             </div>
                         </div>
 
-                        <div className="bg-[#1C2536] px-1 pb-1 pt-1 sm:p-1 sm:pb-1">
+                        <div className="bg-white px-1 pb-1 pt-1 sm:p-1 sm:pb-1">
                             <div className="sm:flex sm:items-start">
                                 <div className="mt-1 text-center sm:ml-4 sm:mt-0 sm:text-left">
                                     {/* Detai tutor */}
@@ -60,7 +59,7 @@ export default function TutorDetail({ open, onClose, selectedData }: Props) {
                                         <section className="text-gray-600 body-font">
                                             <div className="container px-2 py-4 mx-auto">
                                                 <div className="text-center mb-6">
-                                                    <h1 className="sm:text-4xl text-3xl font-semibold text-center title-font mb-2 font-[Belanosima] text-white">Detail Tutor</h1>
+                                                    <h1 className="sm:text-4xl text-3xl font-semibold text-center title-font mb-2 font-[Belanosima]">Detail Tutor</h1>
                                                 </div>
                                                 <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
                                                     <div className="p-2 sm:w-1/2 w-full">

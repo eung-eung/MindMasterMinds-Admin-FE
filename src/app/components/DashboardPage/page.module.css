@@ -16,24 +16,9 @@
     height: 400px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     padding: 40px 20px;
-    background-color: #1c2536;
-    color: #a7a3a3;
+    background-color: #ffffff;
 }
 
-
-
-.itemChart {
-    color: #0B8A00;
-    background: #23C10A26;
-    position: absolute;
-    right: 0;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    padding: 2px 6px;
-    top: 0;
-
-}
 
 .studioStatus {
     width: 60%;
@@ -45,6 +30,6 @@
     width: 35%;
     border: 1px solid #dddddd;
     padding: 15px;
-    background-color: #1c2536;
-    color: white;
+    background-color: #ffffff;
+    color: #000000;
 }

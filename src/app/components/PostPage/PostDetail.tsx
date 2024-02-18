@@ -47,10 +47,9 @@ export default function PostDetail({open, onClose, selectedData} :Props) {
         onClose={onClose}
         aria-labelledby="customized-dialog-title"
         open={open}
-        PaperProps={{ style: { backgroundColor: '#1C2536' } }}
       >
         <DialogTitle sx={{ m: 0, p: 3,  fontSize: "30px"}} id="customized-dialog-title">
-        <p className='font-[Belanosima] font-semibold text-[#bfbaba]'>Detail Post</p>
+        <p className='font-[Belanosima] font-semibold'>Detail Post</p>
         </DialogTitle>
         <IconButton
           aria-label="close"
@@ -64,42 +63,42 @@ export default function PostDetail({open, onClose, selectedData} :Props) {
         >
           <CloseIcon />
         </IconButton>
-        <DialogContent dividers style={{backgroundColor:"black"}}>
-        <div className='bg-[#1C2536]'>
+        <DialogContent dividers>
+        <div>
       
       <div className="mt-2 px-8">
         <dl className="divide-y divide-gray-100">
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-[Belanosima] text-2xl leading-6 text-white ">Title</dt>
-            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-[#bfbaba] sm:col-span-2 sm:mt-0">{selectedData? selectedData.title : ""}</dd>
+            <dt className="font-[Belanosima] text-2xl leading-6 ">Title</dt>
+            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">{selectedData? selectedData.title : ""}</dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-[Belanosima] text-2xl  leading-6 text-white ">Category</dt>
-            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-[#bfbaba] sm:col-span-2 sm:mt-0">{selectedData ? selectedData.category : ""}</dd>
+            <dt className="font-[Belanosima] text-2xl  leading-6 ">Category</dt>
+            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">{selectedData ? selectedData.category : ""}</dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-[Belanosima] text-2xl leading-6 text-white ">Date</dt>
-            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-[#bfbaba] sm:col-span-2 sm:mt-0">{selectedData ? selectedData.date : ""}</dd>
+            <dt className="font-[Belanosima] text-2xl leading-6 ">Date</dt>
+            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">{selectedData ? selectedData.date : ""}</dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-[Belanosima] text-2xl  leading-6 text-white ">Author</dt>
-            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-[#bfbaba] sm:col-span-2 sm:mt-0">{selectedData ? selectedData.author : ""}</dd>
+            <dt className="font-[Belanosima] text-2xl  leading-6 ">Author</dt>
+            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">{selectedData ? selectedData.author : ""}</dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-[Belanosima] text-2xl leading-6 text-white ">Major</dt>
-            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-[#bfbaba] sm:col-span-2 sm:mt-0">{selectedData ? selectedData.major : ""}</dd>
+            <dt className="font-[Belanosima] text-2xl leading-6 ">Major</dt>
+            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">{selectedData ? selectedData.major : ""}</dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-[Belanosima] text-2xl leading-6 text-white ">View</dt>
-            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-[#bfbaba] sm:col-span-2 sm:mt-0">{selectedData ? selectedData.view : ""}</dd>
+            <dt className="font-[Belanosima] text-2xl leading-6 ">View</dt>
+            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">{selectedData ? selectedData.view : ""}</dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-[Belanosima] text-2xl  leading-6 text-white">Like</dt>
-            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-[#bfbaba] sm:col-span-2 sm:mt-0">{selectedData ? selectedData.like : ""}</dd>
+            <dt className="font-[Belanosima] text-2xl  leading-6 ">Like</dt>
+            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">{selectedData ? selectedData.like : ""}</dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-[Belanosima] text-2xl leading-6 text-white">Content</dt>
-            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-[#bfbaba] sm:col-span-2 sm:mt-0">{selectedData ? selectedData.content : ""}</dd>
+            <dt className="font-[Belanosima] text-2xl leading-6 ">Content</dt>
+            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">{selectedData ? selectedData.content : ""}</dd>
           </div>
         </dl>
       </div>
@@ -107,7 +106,7 @@ export default function PostDetail({open, onClose, selectedData} :Props) {
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={onClose}>
-          <p className='font-[Belanosima]'>Close</p>
+          <p className='font-[Belanosima] text-lg text-[#43BF8E]'>Close</p>
           </Button>
         </DialogActions>
       </BootstrapDialog>
