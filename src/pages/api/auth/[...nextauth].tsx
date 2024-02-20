@@ -28,8 +28,7 @@ export default NextAuth({
                 })
                 const user = response.data
 
-
-                if (user) {
+                if (user.userViewLogin.userRole.roleName === 'Admin') {
                     return user
                 }
                 else {

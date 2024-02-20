@@ -99,7 +99,7 @@ export default function Navbar() {
                         <div className={classes.logout} onClick={handleLogOut}>
                             <LogoutIcon className={classes.nav_icon} /> Logout
                         </div>
-                        <img className={classes.logo} src="/images/icon.jpg" />
+
                     </div>
 
                 </>
