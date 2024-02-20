@@ -24,7 +24,7 @@ export default function Navbar() {
         <>
             {!session && status === 'unauthenticated' ? '' :
                 <>
-                <Header/>
+                    <Header />
                     <div className={classes.nav_links}>
                         <div className={classes.user_container}>
                             <img className={classes.avatar} src={session?.user.userViewLogin.avatar} />
@@ -72,7 +72,7 @@ export default function Navbar() {
                         <div className={classes.logout} onClick={handleLogOut}>
                             <LogoutIcon className={classes.nav_icon} /> Logout
                         </div>
-                        <img className={classes.logo} src="/images/icon.jpg" />
+
                     </div>
 
                 </>
