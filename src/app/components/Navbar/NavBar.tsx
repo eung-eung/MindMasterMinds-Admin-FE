@@ -6,6 +6,9 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import classes from './navbar.module.css'
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import DashboardIcon from '@mui/icons-material/Dashboard';
+import SchoolIcon from '@mui/icons-material/School';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import InventoryIcon from '@mui/icons-material/Inventory';
 import { signOut, useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import Header from "../Header/Header";
@@ -24,7 +27,7 @@ export default function Navbar() {
         <>
             {!session && status === 'unauthenticated' ? '' :
                 <>
-                <Header/>
+                    <Header />
                     <div className={classes.nav_links}>
                         <div className={classes.user_container}>
                             <img className={classes.avatar} src={session?.user.userViewLogin.avatar} />
@@ -51,23 +54,47 @@ export default function Navbar() {
                             <AccountCircleIcon
                                 className={classes.nav_icon}
                             />
-                            Student
+                            User
                         </Link>
 
-                        <Link
+                        {/* <Link
                             className={router == '/tutor' ? classes.active : ''}
                             href="/tutor">
                             <CameraIcon className={classes.nav_icon}
                             />
                             Tutor
-                        </Link>
-
+                        </Link> */}
                         <Link
                             className={router == '/post' ? classes.active : ''}
                             href="/post">
                             <ListAltIcon className={classes.nav_icon}
                             />
                             Post
+                        </Link>
+
+                        <Link
+                            className={router == '/order' ? classes.active : ''}
+                            href="/order">
+                            <InventoryIcon className={classes.nav_icon}
+                            />
+                            Order
+                        </Link>
+
+                        
+                        <Link
+                            className={router == '/major' ? classes.active : ''}
+                            href="/major">
+                            <SchoolIcon className={classes.nav_icon}
+                            />
+                            Major
+                        </Link>
+                        
+                        <Link
+                            className={router == '/subject' ? classes.active : ''}
+                            href="/subject">
+                            <MenuBookIcon className={classes.nav_icon}
+                            />
+                            Subject
                         </Link>
                         <div className={classes.logout} onClick={handleLogOut}>
                             <LogoutIcon className={classes.nav_icon} /> Logout

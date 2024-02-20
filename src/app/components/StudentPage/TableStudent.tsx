@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridRenderCellParams, GridRowParams } from '@mui/x-data-grid';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
@@ -8,55 +8,114 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useState } from 'react';
 import StudentDetail from './StudentDetail';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
+import { axiosAuth } from '@/app/lib/axious';
 
 
-interface Row {
-    id: number;
-    lastName: string;
+interface User {
+    id: string;
+    avatar: string;
     firstName: string;
-    yob: number;
-    totalFee: number;
-    totalCourse: number;
+    lastName: string;
     email: string;
-    phoneNum: string;
+    phoneNumber: string;
+    userRole : {
+        roleName: string
+    }
 }
 
-export default function TableStudent() {
-    const getRowId = (row: Row) => row.id.toString();
-    const [dataDialogOpen, setCagesDialogOpen] = useState(false)
-    const [selectedRow, setSelectedRow] = useState<Row | null>(null);
-    const [deleteDialog, setDeleteDialog] = useState(false);
 
-    const openDataDialog = (row: Row) => {
-        setSelectedRow(row);
+
+export default function TableStudent() {
+    const getRowId = (row: User) => row.id;
+    const [dataDialogOpen, setCagesDialogOpen] = useState(false)
+    const [selectedUser, setSelectedUser] = useState<User | null>(null);
+    const [deleteDialog, setDeleteDialog] = useState(false);
+    const [userData, setUserData] = useState<User[]>([]);
+
+    const { data: session, status } = useSession()
+    const token = session?.user.accessToken;
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axiosAuth.get(`/User/get-all-user-by-admin`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    },
+                });
+                const userResponse: User[] = response.data.data.map((item: User) => ({
+                    id: item.id,
+                    avatar: item.avatar,
+                    firstName: item.firstName,
+                    lastName: item.lastName,
+                    email: item.email,
+                    phoneNumber: item.phoneNumber,
+                    roleName: item.userRole.roleName
+                }));
+                setUserData(userResponse);
+            } catch (error) {
+                console.error('Error fetching post data:', error);
+            }
+        };
+        fetchData();
+    },[]);
+
+    const openDataDialog = (row: User) => {
+        setSelectedUser(row);
         setCagesDialogOpen(true);
     };
 
     const closeDialogs = () => {
-        setSelectedRow(null);
+        setSelectedUser(null);
         setCagesDialogOpen(false);
     };
 
-    const openDeleteDialog = (row: Row) => {
-        setSelectedRow(row);
+    const openDeleteDialog = (row: User) => {
+        setSelectedUser(row);
         setDeleteDialog(true);
     };
 
+    const customCellRenderer = (params: GridRenderCellParams<User>) => {
+        const cellValue = params.value ? params.value : '';
+      
+        return (
+          <div style={{ whiteSpace: 'pre-wrap', overflowWrap: 'break-word' }}>
+            {cellValue}
+          </div>
+        );
+      };
+
     const columns = [
-        { field: 'id', headerName: 'ID', width: 100 },
-        { field: 'firstName', headerName: 'First name', width: 200 },
-        { field: 'lastName', headerName: 'Last name', width: 200 },
-        { field: 'yob', headerName: 'Year of birth', width: 150 },
-        { field: 'totalFee', headerName: 'Total Fees', width: 150 },
-        { field: 'email', headerName: 'Email', width: 200 },
-        { field: 'phoneNum', headerName: 'Phone number', width: 150 },
+        {
+            field: 'avatar',
+            headerName: 'Avatar',
+            width: 200,
+            renderCell: (params: { row: User }) => (
+                <div>
+                    {params.row.avatar ?
+                        <img
+                            src={params.row.avatar}
+                            alt="avatar_image"
+                            style={{ height: "100px", objectFit: "cover", width: "100px" }}
+                        />
+                        : ""}
+                </div>
+            ),
+        },
+        { field: 'firstName', headerName: 'First name', width: 150, renderCell: customCellRenderer },
+        { field: 'lastName', headerName: 'Last name', width: 150, renderCell: customCellRenderer },
+        { field: 'email', headerName: 'Email', width: 300, renderCell: customCellRenderer },
+        { field: 'phoneNumber', headerName: 'Phone number', width: 150, renderCell: customCellRenderer },
+        { field: 'roleName', headerName: 'Role', width: 150, renderCell: customCellRenderer },
+
         {
             field: 'actions',
             headerName: 'Actions',
             width: 200,
-            renderCell: (params: { row: Row }) => (
+            renderCell: (params: { row: User }) => (
                 <div>
-                    <Button variant="text" onClick={() => openDataDialog(params.row as Row)}>
+                    <Button variant="text" onClick={() => openDataDialog(params.row as User)}>
                         <VisibilityIcon className='text-[#43BF8E]' />
                     </Button>
                     <Button variant="text">
@@ -64,7 +123,7 @@ export default function TableStudent() {
                             <ModeEditIcon className='text-[#43BF8E]' />
                         </Link>
                     </Button>
-                    <Button variant="text" onClick={() => openDeleteDialog(params.row as Row)}>
+                    <Button variant="text" onClick={() => openDeleteDialog(params.row as User)}>
                         <DeleteIcon className='text-[#43BF8E]' />
                     </Button>
                 </div>
@@ -72,32 +131,22 @@ export default function TableStudent() {
         },
     ];
 
-    const rows: Row[] = [
-        { id: 1, lastName: 'Snow', firstName: 'Jon', yob: 2000, totalCourse: 25, totalFee: 450, email: "abc123@Gmail.com", phoneNum: "0987654321" },
-        { id: 2, lastName: 'Lannister', firstName: 'Cersei', yob: 2001, totalCourse: 25, totalFee: 450, email: "abc123@Gmail.com", phoneNum: "0987654321" },
-        { id: 3, lastName: 'Lannister', firstName: 'Jaime', yob: 2002, totalCourse: 25, totalFee: 450, email: "abc123@Gmail.com", phoneNum: "0987654321" },
-        { id: 4, lastName: 'Stark', firstName: 'Arya', yob: 1999, totalCourse: 25, totalFee: 450, email: "abc123@Gmail.com", phoneNum: "0987654321" },
-        { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', yob: 1999, totalCourse: 25, totalFee: 450, email: "abc123@Gmail.com", phoneNum: "0987654321" },
-        { id: 6, lastName: 'Melisandre', firstName: 'Rossini', yob: 2004, totalCourse: 25, totalFee: 450, email: "abc123@Gmail.com", phoneNum: "0987654321" },
-        { id: 7, lastName: 'Clifford', firstName: 'Ferrara', yob: 2001, totalCourse: 25, totalFee: 450, email: "abc123@Gmail.com", phoneNum: "0987654321" },
-        { id: 8, lastName: 'Frances', firstName: 'Rossini', yob: 2002, totalCourse: 25, totalFee: 450, email: "abc123@Gmail.com", phoneNum: "0987654321" },
-        { id: 9, lastName: 'Roxie', firstName: 'Harvey', yob: 1997, totalCourse: 25, totalFee: 450, email: "abc123@Gmail.com", phoneNum: "0987654321" },
-    ];
-
+  
 
     return (
-        <div style={{ height: 400, width: '100%' }}>
+        <div style={{  width: '100%' }}>
             <DataGrid
-                rows={rows}
+                rows={userData}
                 columns={columns}
                 getRowId={getRowId}
                 initialState={{
                     pagination: {
-                        paginationModel: { page: 0, pageSize: 5 }, // Fixed typo here
+                        paginationModel: { page: 0, pageSize: 5 }, 
                     },
                 }}
                 pageSizeOptions={[5, 10]}
                 checkboxSelection
+                rowHeight={120}
                 sx={{ fontFamily: "Belanosima", fontSize: "17px", backgroundColor: "white" }}
             />
 
@@ -105,7 +154,7 @@ export default function TableStudent() {
             <StudentDetail
                 open={dataDialogOpen}
                 onClose={closeDialogs}
-                selectedData={selectedRow}
+                selectedData={selectedUser}
             />
 
             {/* Confirm delete dialog */}
@@ -126,7 +175,7 @@ export default function TableStudent() {
                         <p className='font-[Belanosima]'>Cancel</p>
                     </Button>
                     <Button
-                        // onClick={() => handleDelete(selectedRow)} 
+                        // onClick={() => handleDelete(selectedUser)} 
                         color="error">
                         <p className='font-[Belanosima]'>Delete</p>
                     </Button>

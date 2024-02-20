@@ -5,29 +5,17 @@ import { Alert, AlertTitle, Button, Dialog, DialogActions, DialogContent, Dialog
 import { useRouter } from 'next/router';
 
 interface Post {
-    id: number,
-    title: string,
-    category: string,
-    date: string,
-    author: string,
-    major: string,
-    view: number,
-    like: number, 
+    id: string,
     content: string,
+    image: string,
 }
 
 export default function PostUpdate() {
     const [open, setOpen] = useState(false);
     const [post, setPost] = useState<Post>({
-        id: 1,
-        title: 'Post 1',
-        category: 'News',
-        date: '2024-02-07',
-        author: 'John Doe',
-        major: 'Computer Science',
-        view: 3000,
-        like: 1500,
-        content: 'Become the premier connecting platform, making it easy for everyone to access knowledge and a supportive community, thereby unlocking their own potential and contributing to society'
+        id: '',
+        content: '',
+        image: '',
     });
 
 
@@ -66,69 +54,7 @@ export default function PostUpdate() {
                         </div>
                         <div className="lg:w-3/4 md:w-2/3 mx-auto">
                             <div className="flex flex-wrap -m-2">
-                                <div className="p-2 w-full">
-                                    <div className="col-span-full">
-                                        <label htmlFor="title" className="block font-[Belanosima] text-xl font-medium leading-6 ">Title</label>
-                                        <div className="mt-2">
-                                            <input type="text"
-                                                name="title"
-                                                value={post.title}
-                                                onChange={handleChange}
-                                                autoComplete="title" className="block p-4 w-full rounded-md border-0 py-1.5 text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg font-[Belanosima] sm:leading-6" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="p-2 w-full mt-4">
-                                    <div className="col-span-full">
-                                        <label htmlFor="category" className="block font-[Belanosima] text-xl font-medium leading-6 ">Category</label>
-                                        <div className="mt-2">
-                                            <input type="text"
-                                                name="category"
-                                                value={post.category}
-                                                onChange={handleChange}
-                                                autoComplete="category" className="block p-4 w-full rounded-md border-0 py-1.5 text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg font-[Belanosima] sm:leading-6" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="p-2 w-1/2 mt-4">
-                                    <div className="sm:col-span-3">
-                                        <label htmlFor="date" className="block font-[Belanosima] text-xl font-medium leading-6 ">Date</label>
-                                        <div className="mt-2">
-                                            <input type="date"
-                                                name="date"
-                                                value={post.date}
-                                                onChange={handleChange}
-                                                required autoComplete="date" className="block p-4 w-full rounded-md border-0 py-1.5 text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg font-[Belanosima] sm:leading-6" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="p-2 w-1/2 mt-4">
-
-                                    <div className="sm:col-span-3">
-                                        <label htmlFor="author" className="block font-[Belanosima] text-xl font-medium leading-6 ">Author</label>
-                                        <div className="mt-2">
-                                            <input type="text"
-                                                name="author"
-                                                value={post.author}
-                                                onChange={handleChange}
-                                                required autoComplete="author" className="block p-4 w-full rounded-md border-0 py-1.5 text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg font-[Belanosima] sm:leading-6" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="p-2 w-full mt-4">
-                                    <div className="sm:col-span-3">
-                                        <label htmlFor="major" className="block font-[Belanosima] text-xl font-medium leading-6 ">Major</label>
-                                        <div className="mt-2">
-                                            <input type="text"
-                                                name="major"
-                                                value={post.major}
-                                                onChange={handleChange}
-                                                required autoComplete="major" className="block p-4 w-full rounded-md border-0 py-1.5 text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg font-[Belanosima] sm:leading-6" />
-                                        </div>
-                                    </div>
-                                </div>
+                               
                                 <div className="p-2 w-full mt-4">
                                     <div className="sm:col-span-3">
                                         <label htmlFor="content" className="block font-[Belanosima] text-xl font-medium leading-6 ">Content</label>
@@ -141,6 +67,23 @@ export default function PostUpdate() {
                                         </div>
                                     </div>
                                 </div>
+                                <div className="p-2 w-full">
+                                        <div className="col-span-full">
+                                            <label htmlFor="mainImage" className="block font-[Belanosima] text-xl font-medium leading-6 ">Image</label>
+                                            <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-2 py-4">
+                                                <div className="text-center">
+                                                    <div className="mt-1 flex font-[Belanosima] text-xl leading-6 ">
+                                                        <label htmlFor="mainImage" className="relative cursor-pointer rounded-md font-semibold text-gray-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-[#43BF8E]">
+                                                            <span>Upload a file</span>
+                                                            <input accept=".jpg, .jpeg, .png" id="mainImage" type="file" name="mainImage" onChange={handleChange} className="sr-only" />
+                                                        </label>
+                                                        <p className="pl-1">or drag and drop</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 <div className="p-2 w-full">
                                     <button type='submit' className="flex font-[Belanosima] mx-auto my-10 text-white bg-[#43BF8E] border-0 py-2 px-8 focus:outline-none hover:bg-[#358464] rounded text-lg">Update</button>
                                 </div>

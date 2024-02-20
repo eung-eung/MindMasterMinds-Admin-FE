@@ -1,0 +1,52 @@
+.serviceContainer {
+    margin-right: 40px;
+    z-index: -999;
+}
+
+.serviceContainer .serviceTitle {
+    width: 100%;
+    padding-top: 20px;
+    position: relative;
+    top: 80px;
+    /* z-index: -999; */
+}
+
+.serviceAction {
+    margin-top: 50px;
+    display: flex;
+    margin-left: 300px;
+    justify-content: space-between;
+}
+
+.serviceActionBtn {
+    flex: 1;
+    text-align: right;
+}
+
+.searchInput {
+    width: 500px !important;
+    border: 1px solid #dddddd !important;
+    outline: none;
+}
+
+.searchInput:focus {
+    outline: none !important;
+}
+
+/* #input-with-icon-textfield:focus {
+    outline: none !important;
+} */
+
+#create {
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+#select-all {
+    width: 18%;
+    margin-right: 4%;
+}
+
+#delete {
+    width: 18%;
+}

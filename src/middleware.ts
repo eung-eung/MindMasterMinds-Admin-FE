@@ -18,6 +18,9 @@ export const config = {
         '/tutor',
         '/student',
         '/dashboard',
-        '/post'
+        '/post',
+        '/major',
+        '/subject',
+        '/order'
     ],
 };

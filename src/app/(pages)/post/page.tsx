@@ -5,7 +5,7 @@ import React from 'react'
 export const metadata: Metadata = {
     title: "Post Management"
 }
-export default function TutorManagement() {
+export default function PostManagement() {
     return (
         <div>
             <PostManage/>

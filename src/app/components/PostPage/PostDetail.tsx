@@ -7,8 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import { PaperClipIcon } from '@heroicons/react/20/solid'
-
+import { PaperClipIcon } from '@heroicons/react/20/solid';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -18,38 +17,36 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     padding: theme.spacing(2),
   },
   '& .MuiDialog-paperWidthSm': {
-    maxWidth: '65%', 
+    maxWidth: '65%',
   },
 }));
 
 interface Props {
-    open: boolean;
-    onClose: () => void;
-    selectedData: {
-        id: number,
-        title: string,
-        category: string,
-        date: string,
-        author: string,
-        major: string,
-        view: number,
-        like: number, 
-        content: string,
-    } | null;
-  }
+  open: boolean;
+  onClose: () => void;
+  selectedData: {
+    id: string;
+    content: string;
+    image: string;
+    creationDate: string;
+    user: {
+      firstName: string;
+      lastName: string;
+      email: string;
+      phoneNumber: string;
+      userRole: {
+        roleName: string;
+      };
+    };
+  } | null;
+}
 
-export default function PostDetail({open, onClose, selectedData} :Props) {
+export default function PostDetail({ open, onClose, selectedData }: Props) {
   return (
-    
     <React.Fragment>
-     
-      <BootstrapDialog
-        onClose={onClose}
-        aria-labelledby="customized-dialog-title"
-        open={open}
-      >
-        <DialogTitle sx={{ m: 0, p: 3,  fontSize: "30px"}} id="customized-dialog-title">
-        <p className='font-[Belanosima] font-semibold'>Detail Post</p>
+      <BootstrapDialog onClose={onClose} aria-labelledby="customized-dialog-title" open={open}>
+        <DialogTitle sx={{ m: 0, p: 3, fontSize: '30px' }} id="customized-dialog-title">
+          <p className="font-[Belanosima] font-semibold">Detail Post</p>
         </DialogTitle>
         <IconButton
           aria-label="close"
@@ -64,53 +61,71 @@ export default function PostDetail({open, onClose, selectedData} :Props) {
           <CloseIcon />
         </IconButton>
         <DialogContent dividers>
-        <div>
-      
-      <div className="mt-2 px-8">
-        <dl className="divide-y divide-gray-100">
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-[Belanosima] text-2xl leading-6 ">Title</dt>
-            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">{selectedData? selectedData.title : ""}</dd>
+          <div className="mt-2 px-8">
+            <dl className="divide-y divide-gray-100">
+              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt className="font-[Belanosima] text-2xl leading-6">ID</dt>
+                <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">
+                  {selectedData ? selectedData.id : ''}
+                </dd>
+              </div>
+              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt className="font-[Belanosima] text-2xl leading-6">Image</dt>
+                <dd className="mt-1 sm:col-span-2 sm:mt-0">
+                  {selectedData && selectedData.image && (
+                    <img
+                      src={selectedData.image}
+                      alt="post_image"
+                      className="h-40 w-auto object-cover"
+                    />
+                  )}
+                </dd>
+              </div>
+              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt className="font-[Belanosima] text-2xl leading-6">Creation Date</dt>
+                <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">
+                  {selectedData ? selectedData.creationDate : ''}
+                </dd>
+              </div>
+              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt className="font-[Belanosima] text-2xl leading-6">Content</dt>
+                <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">
+                  {selectedData ? selectedData.content : ''}
+                </dd>
+              </div>
+              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt className="font-[Belanosima] text-2xl leading-6">Author</dt>
+                <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">
+                  {selectedData ? `${selectedData.user.firstName} ${selectedData.user.lastName}` : ''}
+                </dd>
+              </div>
+              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt className="font-[Belanosima] text-2xl leading-6">Author role</dt>
+                <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">
+                  {selectedData ? `${selectedData.user.userRole.roleName} ` : ''}
+                </dd>
+              </div>
+              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt className="font-[Belanosima] text-2xl leading-6">Author email</dt>
+                <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">
+                  {selectedData ? `${selectedData.user.email}` : ''}
+                </dd>
+              </div>
+              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt className="font-[Belanosima] text-2xl leading-6">Author phone</dt>
+                <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">
+                  {selectedData ? `${selectedData.user.phoneNumber}` : ''}
+                </dd>
+              </div>
+            </dl>
           </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-[Belanosima] text-2xl  leading-6 ">Category</dt>
-            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">{selectedData ? selectedData.category : ""}</dd>
-          </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-[Belanosima] text-2xl leading-6 ">Date</dt>
-            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">{selectedData ? selectedData.date : ""}</dd>
-          </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-[Belanosima] text-2xl  leading-6 ">Author</dt>
-            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">{selectedData ? selectedData.author : ""}</dd>
-          </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-[Belanosima] text-2xl leading-6 ">Major</dt>
-            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">{selectedData ? selectedData.major : ""}</dd>
-          </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-[Belanosima] text-2xl leading-6 ">View</dt>
-            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">{selectedData ? selectedData.view : ""}</dd>
-          </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-[Belanosima] text-2xl  leading-6 ">Like</dt>
-            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">{selectedData ? selectedData.like : ""}</dd>
-          </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-[Belanosima] text-2xl leading-6 ">Content</dt>
-            <dd className="mt-1 font-[Belanosima] text-xl leading-6 text-gray-600 sm:col-span-2 sm:mt-0">{selectedData ? selectedData.content : ""}</dd>
-          </div>
-        </dl>
-      </div>
-    </div>
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={onClose}>
-          <p className='font-[Belanosima] text-lg text-[#43BF8E]'>Close</p>
+            <p className="font-[Belanosima] text-lg text-[#43BF8E]">Close</p>
           </Button>
         </DialogActions>
       </BootstrapDialog>
     </React.Fragment>
-    
   );
 }
