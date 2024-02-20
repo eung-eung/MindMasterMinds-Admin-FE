@@ -104,7 +104,7 @@ export default function TablePost() {
                         <img
                             src={params.row.image}
                             alt="post_image"
-                            style={{ height: "80px", objectFit: "cover", width: "130px" }}
+                            style={{ height: "80px", objectFit: "cover", width: "130px" }}  
                         />
                         : ""}
                 </div>
