@@ -186,7 +186,7 @@ export default function TableMajor() {
           <TableRow>
             <TableCell />
             <TableCell ><p className='font-[Belanosima] font-semibold text-2xl'>Name</p></TableCell>
-            <TableCell align="left" sx={{width:"250px"}}><p className='font-[Belanosima] font-semibold text-2xl'>Code</p></TableCell>
+            <TableCell align="left" sx={{width:"150px"}}><p className='font-[Belanosima] font-semibold text-2xl'>Code</p></TableCell>
             <TableCell align="left"><p className='font-[Belanosima] font-semibold text-2xl'>Description</p></TableCell>
           </TableRow>
         </TableHead>

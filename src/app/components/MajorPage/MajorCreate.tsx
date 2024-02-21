@@ -187,14 +187,14 @@ export default function MajorCreate() {
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
                         <Alert severity="success">
-                            <AlertTitle>Success</AlertTitle>
-                            <strong>Create successfully!</strong>
+                            <AlertTitle><p className='font-[Belanosima]'>Success</p></AlertTitle>
+                            <strong className='font-[Belanosima]'>Create successfully!</strong>
                         </Alert>
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={() => {handleClose(), window.location.reload();}} color="primary">
-                        Close
+                    <p className='font-[Belanosima]'>Close</p>
                     </Button>
                 </DialogActions>
             </Dialog>
