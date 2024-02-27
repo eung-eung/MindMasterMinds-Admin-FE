@@ -145,8 +145,9 @@ export default function TablePost() {
                     },
                 }}
                 pageSizeOptions={[5, 10]}
-                checkboxSelection
-                sx={{ fontFamily: "Belanosima", fontSize: "17px", backgroundColor: "white" }}
+                // checkboxSelection
+                disableRowSelectionOnClick
+                sx={{ fontFamily: "Belanosima", fontSize: "17px", backgroundColor: "white",paddingLeft:"30px" }}
             />
 
             {/* Detail Dialog */}

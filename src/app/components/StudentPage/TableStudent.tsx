@@ -145,9 +145,10 @@ export default function TableStudent() {
                     },
                 }}
                 pageSizeOptions={[5, 10]}
-                checkboxSelection
+                // checkboxSelection
+                disableRowSelectionOnClick
                 rowHeight={120}
-                sx={{ fontFamily: "Belanosima", fontSize: "17px", backgroundColor: "white" }}
+                sx={{ fontFamily: "Belanosima", fontSize: "17px", backgroundColor: "white" , paddingLeft:"30px"}}
             />
 
             {/* Detail Dialog */}
