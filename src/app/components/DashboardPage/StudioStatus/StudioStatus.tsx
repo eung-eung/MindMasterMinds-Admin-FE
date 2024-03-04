@@ -47,6 +47,7 @@ const rows = [
 
 
 export default function StudioStatus() {
+    console.log('test');
 
     return (
         <div>
