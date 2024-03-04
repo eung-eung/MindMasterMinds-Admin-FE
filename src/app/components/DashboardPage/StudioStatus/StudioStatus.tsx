@@ -47,8 +47,6 @@ const rows = [
 
 
 export default function StudioStatus() {
-    console.log('test');
-
     return (
         <div>
             <h3 style={{ textAlign: "left", padding: "5px 10px", fontFamily: "Belanosima", fontSize: "25px", backgroundColor: "#fcfcfc" }}>Top 3 Best Tutors of Year</h3>
