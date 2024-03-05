@@ -1,8 +1,9 @@
 import { BarElement, Tooltip, Legend, CategoryScale, Chart as ChartJS, LinearScale } from 'chart.js';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
-import { options, data } from './ConfigOption';
+import { useSession } from 'next-auth/react';
+import { axiosAuth } from '@/app/lib/axious';
 
 const Revenue: React.FC = () => {
     ChartJS.register(
@@ -12,6 +13,74 @@ const Revenue: React.FC = () => {
         Tooltip,
         Legend,
     );
+
+    const { data: session } = useSession()
+    const token = session?.user.accessToken;
+    const [label, setLabel] = useState<string[]>([]);
+    const [chartData, setChartData] = useState<number[]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axiosAuth.get(`/DashBoard/monthly-revenues`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                const dashboardData = response.data;
+                setLabel(dashboardData.labels);
+                setChartData(dashboardData.data);
+                console.log("label: "+ label);
+                console.log("data: "+ chartData)
+            } catch (error) {
+                console.error('Error fetching post data:', error);
+            }
+        };
+        fetchData();
+    }, []);
+
+    const data: ChartData<'bar', (number | null)[], unknown> = {
+        labels: label,
+        datasets: [
+            {
+                data: chartData,
+                backgroundColor: '#7afdc9',
+                borderRadius: 15,
+                borderSkipped: false,
+            },
+        ],
+    };
+
+    const options: ChartOptions<'bar'> = {
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            },
+          
+        },
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                },
+                ticks: {
+                    color: 'black', // Change text color of month labels
+                }
+            },
+            y: {
+                grid: {
+                    display: true,
+                },
+                max: 25000000,
+                ticks: {
+                    stepSize: 5000000,
+                    color: 'black', 
+                }
+            },
+        }
+    };
+
     return (
         <>
             <Bar

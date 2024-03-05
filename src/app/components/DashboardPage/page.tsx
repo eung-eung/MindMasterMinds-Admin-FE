@@ -14,23 +14,23 @@ interface CardItem {
 const array: CardItem[] = [
     {
         title: "Total student",
-        total: '1440',
+        total: '200',
         label: 'Students'
     },
     {
         title: "Total Tutor",
-        total: '20',
+        total: '25',
         label: 'Tutors'
     },
     {
         title: "Total Post",
-        total: '77',
+        total: '70',
         label: 'Posts'
     },
     {
         title: "Revenue",
-        total: '7789',
-        label: '$'
+        total: '43645000',
+        label: 'VND'
     }
 ];
 
@@ -44,7 +44,7 @@ export default function DashBoardPage() {
                 <h3 className='text-left mb-4 font-[Belanosima] text-black text-3xl'>Revenue</h3>
                 <Revenue />
             </div>
-            <div style={{ marginTop: "80px", display: "flex", justifyContent: "space-between" }}>
+            {/* <div style={{ marginTop: "80px", display: "flex", justifyContent: "space-between" }}>
                 <div className={classes.studioStatus}>
                     <StudioStatus />
                 </div>
@@ -55,7 +55,7 @@ export default function DashBoardPage() {
                         <PieChart />
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
