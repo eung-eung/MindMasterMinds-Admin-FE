@@ -30,8 +30,6 @@ const Revenue: React.FC = () => {
                 const dashboardData = response.data;
                 setLabel(dashboardData.labels);
                 setChartData(dashboardData.data);
-                console.log("label: "+ label);
-                console.log("data: "+ chartData)
             } catch (error) {
                 console.error('Error fetching post data:', error);
             }
@@ -57,7 +55,7 @@ const Revenue: React.FC = () => {
             legend: {
                 display: false
             },
-          
+
         },
         scales: {
             x: {
@@ -75,7 +73,7 @@ const Revenue: React.FC = () => {
                 max: 25000000,
                 ticks: {
                     stepSize: 5000000,
-                    color: 'black', 
+                    color: 'black',
                 }
             },
         }
@@ -86,7 +84,7 @@ const Revenue: React.FC = () => {
             <Bar
                 data={data as ChartData<'bar', (number | null)[], unknown>}
                 options={options as ChartOptions<'bar'>}
-                style={{ padding: "20px"}}
+                style={{ padding: "20px" }}
             />
         </>
     );
