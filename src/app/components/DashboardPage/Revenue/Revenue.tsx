@@ -18,6 +18,7 @@ const Revenue: React.FC = () => {
     const token = session?.user.accessToken;
     const [label, setLabel] = useState<string[]>([]);
     const [chartData, setChartData] = useState<number[]>([]);
+    const [maxValue, setMaxValue] = useState<number>(0);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,6 +31,9 @@ const Revenue: React.FC = () => {
                 const dashboardData = response.data;
                 setLabel(dashboardData.labels);
                 setChartData(dashboardData.data);
+
+                const max = Math.max(...dashboardData.data) ;
+                setMaxValue(max);
             } catch (error) {
                 console.error('Error fetching post data:', error);
             }
@@ -70,7 +74,7 @@ const Revenue: React.FC = () => {
                 grid: {
                     display: true,
                 },
-                max: 25000000,
+                max: maxValue,
                 ticks: {
                     stepSize: 5000000,
                     color: 'black',
