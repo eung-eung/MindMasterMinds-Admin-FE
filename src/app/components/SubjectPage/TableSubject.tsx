@@ -182,7 +182,7 @@ const TableSubject: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axiosAuth.post('/Subject',
+      const response = await axiosAuth.post('/Subject?pageNumber=0&pageSize=200',
         newSubject,
         {
           headers: {

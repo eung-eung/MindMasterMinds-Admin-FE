@@ -45,7 +45,7 @@ export default function TableOrder() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axiosAuth.get(`/Order/get-all-order-by-admin`, {
+                const response = await axiosAuth.get(`/Order/get-all-order-by-admin?pageNumber=0&pageSize=200`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     },

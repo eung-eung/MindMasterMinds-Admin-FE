@@ -39,7 +39,7 @@ export default function TableStudent() {
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axiosAuth.get(`/User/get-all-user-by-admin`, {
+                const response = await axiosAuth.get(`/User/get-all-user-by-admin?pageNumber=0&pageSize=200`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     },

@@ -51,7 +51,7 @@ export default function TablePost() {
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axiosAuth.get(`/Post`, {
+                const response = await axiosAuth.get(`/Post?pageNumber=0&pageSize=200`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     },
