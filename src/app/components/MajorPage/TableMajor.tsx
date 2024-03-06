@@ -62,7 +62,7 @@ function Row(props: { row: Major }) {
 
   const fetchSubjects = async (courseId: string) => {
     try {
-      const response = await axiosAuth.get(`/Subject/get-subject-by-courseId/${courseId}?pageNumber=0&pageSize=200`, {
+      const response = await axiosAuth.get(`/Subject/get-subject-by-courseId/${courseId}?pageNumber=0&pageSize=100`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
