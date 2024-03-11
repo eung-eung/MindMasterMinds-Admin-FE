@@ -368,7 +368,7 @@ const TableSubject: React.FC = () => {
           <section className="text-white body-font relative">
             <div >
               <div className="flex flex-col text-center w-full mt-10 mb-10">
-                <h1 className="sm:text-3xl text-2xl font-semibold font-[Belanosima] title-font mb-4 text-gray-700">Create New Major</h1>
+                <h1 className="sm:text-3xl text-2xl font-semibold font-[Belanosima] title-font mb-4 text-gray-700">Create New Subject</h1>
               </div>
               <div className="lg:w-2/3 md:w-2/3 mx-auto">
                 <div className="flex flex-wrap -m-12">
