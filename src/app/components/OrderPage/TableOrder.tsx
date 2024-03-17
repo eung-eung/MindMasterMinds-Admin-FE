@@ -104,18 +104,18 @@ export default function TableOrder() {
 
 
     const columns = [
-        { field: 'studentName', headerName: 'Student Name', width: 200, renderCell: customCellRenderer },
+        { field: 'studentName', headerName: 'Student Name', width: 150, renderCell: customCellRenderer },
         { field: 'email', headerName: 'Student email', width: 200, renderCell: customCellRenderer },
-        { field: 'summary', headerName: 'Summary', width: 200, renderCell: customCellRenderer },
-        { field: 'courseName', headerName: 'Major Name', width: 250, renderCell: customCellRenderer },
+        { field: 'totalPrice', headerName: 'Total Price', width: 120, renderCell: customCellRenderer },
+        { field: 'courseName', headerName: 'Major Name', width: 180, renderCell: customCellRenderer },
         // { field: 'courseCode', headerName: 'Major Code', width: 180, renderCell: customCellRenderer },
         // { field: 'subjectName', headerName: 'Subject Name', width: 250, shrink: 1, renderCell: customCellRenderer },
-        { field: 'subjectCode', headerName: 'Subject Code', width: 200, shrink: 1, renderCell: customCellRenderer },
-        { field: 'subjectPrice', headerName: 'Subject Price', width: 150, renderCell: customCellRenderer },
-        { field: 'quantity', headerName: 'Session', width: 100, renderCell: customCellRenderer },
-        { field: 'statusOrder', headerName: 'Status Order', width: 180, renderCell: customCellRenderer },
-        { field: 'totalPrice', headerName: 'Total Price', width: 150, renderCell: customCellRenderer },
-        
+        { field: 'subjectCode', headerName: 'Subject Code', width: 130, shrink: 1, renderCell: customCellRenderer },
+        { field: 'subjectPrice', headerName: 'Subject Price', width: 130, renderCell: customCellRenderer },
+        { field: 'quantity', headerName: 'Session', width: 80, renderCell: customCellRenderer },
+        { field: 'statusOrder', headerName: 'Status', width: 130, renderCell: customCellRenderer },
+       
+        { field: 'summary', headerName: 'Summary', width: 200, renderCell: customCellRenderer },
     ];
 
 
