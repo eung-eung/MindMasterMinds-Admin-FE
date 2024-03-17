@@ -32,6 +32,11 @@ interface Order {
     quantity: number;
     statusOrder: string;
     totalPrice: number;
+    student : {
+        email: string;
+        firstName: string;
+        lastName: string;
+    }
 }
 
 export default function TableOrder() {
@@ -61,7 +66,9 @@ export default function TableOrder() {
                     subjectPrice: item.courseSubject.subject.price,
                     quantity: item.quantity,
                     statusOrder: item.statusOrder,
-                    totalPrice: item.totalPrice
+                    totalPrice: item.totalPrice,
+                    email: item.student.email,
+                    studentName: item.student.firstName + " " + item.student.lastName,
                 }));
                 setOrderData(orderResponse);
             } catch (error) {
@@ -97,6 +104,8 @@ export default function TableOrder() {
 
 
     const columns = [
+        { field: 'studentName', headerName: 'Student Name', width: 200, renderCell: customCellRenderer },
+        { field: 'email', headerName: 'Student email', width: 200, renderCell: customCellRenderer },
         { field: 'summary', headerName: 'Summary', width: 200, renderCell: customCellRenderer },
         { field: 'courseName', headerName: 'Major Name', width: 250, renderCell: customCellRenderer },
         // { field: 'courseCode', headerName: 'Major Code', width: 180, renderCell: customCellRenderer },
