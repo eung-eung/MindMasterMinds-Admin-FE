@@ -9,7 +9,8 @@ interface CardProps {
     }
 }
 
-const Card: React.FC<CardProps> = ({ item }) => {
+
+export default function Card({ item }: { item: any }) {
 
     return (
         <div className={classes.cardItem}>
@@ -25,4 +26,3 @@ const Card: React.FC<CardProps> = ({ item }) => {
     );
 }
 
-export default Card;
