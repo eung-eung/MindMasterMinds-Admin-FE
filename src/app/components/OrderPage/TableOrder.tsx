@@ -31,6 +31,7 @@ interface Order {
     };
     quantity: number;
     statusOrder: string;
+    totalPrice: number;
 }
 
 export default function TableOrder() {
@@ -60,6 +61,7 @@ export default function TableOrder() {
                     subjectPrice: item.courseSubject.subject.price,
                     quantity: item.quantity,
                     statusOrder: item.statusOrder,
+                    totalPrice: item.totalPrice
                 }));
                 setOrderData(orderResponse);
             } catch (error) {
@@ -96,33 +98,15 @@ export default function TableOrder() {
 
     const columns = [
         { field: 'summary', headerName: 'Summary', width: 200, renderCell: customCellRenderer },
-        { field: 'courseName', headerName: 'Major Name', width: 200, renderCell: customCellRenderer },
-        { field: 'courseCode', headerName: 'Major Code', width: 200, renderCell: customCellRenderer },
-        { field: 'subjectName', headerName: 'Subject Name', width: 250, shrink: 1, renderCell: customCellRenderer },
-        { field: 'subjectCode', headerName: 'Subject Code', width: 250, shrink: 1, renderCell: customCellRenderer },
+        { field: 'courseName', headerName: 'Major Name', width: 250, renderCell: customCellRenderer },
+        // { field: 'courseCode', headerName: 'Major Code', width: 180, renderCell: customCellRenderer },
+        // { field: 'subjectName', headerName: 'Subject Name', width: 250, shrink: 1, renderCell: customCellRenderer },
+        { field: 'subjectCode', headerName: 'Subject Code', width: 200, shrink: 1, renderCell: customCellRenderer },
         { field: 'subjectPrice', headerName: 'Subject Price', width: 150, renderCell: customCellRenderer },
-        { field: 'quantity', headerName: 'Quantity', width: 100, renderCell: customCellRenderer },
-        { field: 'statusOrder', headerName: 'Status Order', width: 150, renderCell: customCellRenderer },
-        // {
-        //   field: 'actions',
-        //   headerName: 'Actions',
-        //   width: 200,
-        //   renderCell: (params: { row: Order }) => (
-        //     <div>
-        //             <Button variant="text" onClick={() => openDataDialog(params.row as Order)}>
-        //                 <VisibilityIcon className='text-[#43BF8E]' />
-        //             </Button>
-        //             <Button variant="text">
-        //                 <Link href={`/student/${params.row.id}`}>
-        //                     <ModeEditIcon className='text-[#43BF8E]' />
-        //                 </Link>
-        //             </Button>
-        //             <Button variant="text" onClick={() => openDeleteDialog(params.row as Order)}>
-        //                 <DeleteIcon className='text-[#43BF8E]' />
-        //             </Button>
-        //         </div>
-        //   ),
-        // },
+        { field: 'quantity', headerName: 'Session', width: 100, renderCell: customCellRenderer },
+        { field: 'statusOrder', headerName: 'Status Order', width: 180, renderCell: customCellRenderer },
+        { field: 'totalPrice', headerName: 'Total Price', width: 150, renderCell: customCellRenderer },
+        
     ];
 
 
