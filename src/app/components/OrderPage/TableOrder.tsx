@@ -37,7 +37,8 @@ interface Order {
         firstName: string;
         lastName: string;
     },
-    completeStudyTime: string
+    completeStudyTime: string,
+    stateInfo: boolean,
 }
 
 export default function TableOrder() {
@@ -71,6 +72,7 @@ export default function TableOrder() {
                     email: item.student.email,
                     studentName: item.student.firstName + " " + item.student.lastName,
                     completeDay: item.completeStudyTime,
+                    stateInfo: item.stateInfo
                 }));
                 setOrderData(orderResponse);
             } catch (error) {
@@ -101,6 +103,17 @@ export default function TableOrder() {
             cellValue = cellValue ? new Date(cellValue).toLocaleDateString() : 'Not Complete';
         }
     
+        if (params.field === 'totalPrice' || params.field === 'subjectPrice') {
+            cellValue = parseFloat(cellValue).toLocaleString(undefined, {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+            });
+        }
+    
+        if (params.field === 'stateInfo') {
+            cellValue = params.value ? 'Urgent' : 'Normal';
+        }
+    
         return (
             <div style={{ whiteSpace: 'pre-wrap', overflowWrap: 'break-word' }}>
                 {cellValue}
@@ -109,10 +122,14 @@ export default function TableOrder() {
     };
     
     
+    
+    
+    
     const columns = [
         { field: 'studentName', headerName: 'Student Name', width: 150, renderCell: customCellRenderer },
         { field: 'email', headerName: 'Student email', width: 270, renderCell: customCellRenderer },
         { field: 'totalPrice', headerName: 'Total Price', width: 120, renderCell: customCellRenderer },
+        { field: 'stateInfo', headerName: 'State Study', width: 120, renderCell: customCellRenderer },
         { field: 'completeDay', headerName: 'Complete Day', width: 160, renderCell: customCellRenderer },
         { field: 'courseName', headerName: 'Major Name', width: 180, renderCell: customCellRenderer },
         { field: 'subjectCode', headerName: 'Subject Code', width: 130, shrink: 1, renderCell: customCellRenderer },
