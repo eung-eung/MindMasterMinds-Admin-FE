@@ -7,34 +7,7 @@ import classes from './page.module.css'
 import { useEffect, useState } from 'react';
 import useAxiosAuth from '@/app/lib/hooks/useAxiosAuth';
 
-interface CardItem {
-    title: string;
-    total: string;
-    label: string;
-}
 
-const array: CardItem[] = [
-    {
-        title: "Total student",
-        total: '200',
-        label: 'Students'
-    },
-    {
-        title: "Total Tutor",
-        total: '25',
-        label: 'Tutors'
-    },
-    {
-        title: "Total Post",
-        total: '70',
-        label: 'Posts'
-    },
-    {
-        title: "Revenue",
-        total: '43645000',
-        label: 'VND'
-    }
-];
 
 export default function DashBoardPage() {
     const [revenue, setRevenue] = useState({})
@@ -44,11 +17,15 @@ export default function DashBoardPage() {
     useEffect(() => {
         const getRevenue = async () => {
             const revenue = await axios.get('/Dashboard/revenue')
+            const formattedRevenue = parseFloat(revenue.data.message).toLocaleString(undefined, {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+            });
             setRevenue({
                 title: 'Revenue',
-                total: revenue.data.message,
+                total: formattedRevenue,
                 label: 'VND'
-            })
+            });
         }
 
         const getTutor = async () => {
