@@ -17,10 +17,7 @@ export default function DashBoardPage() {
     useEffect(() => {
         const getRevenue = async () => {
             const revenue = await axios.get('/Dashboard/revenue')
-            const formattedRevenue = parseFloat(revenue.data.message).toLocaleString(undefined, {
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 0,
-            });
+            const formattedRevenue = parseFloat(revenue.data.message).toLocaleString();
             setRevenue({
                 title: 'Revenue',
                 total: formattedRevenue,
